@@ -1,28 +1,23 @@
-import { test } from "@jest/globals";
-import indicator from "../app";
+import { test } from '@jest/globals';
+import indicator from '../app';
 
-test("should show: healthy", () => {
+test('should show: healthy', () => {
+  const expected = 'healthy';
+  const received = indicator({ name: 'Маг', health: 90 });
 
-    const expected = 'healthy';
-    const received = indicator({name: 'Маг', health: 90});
+  expect(received).toBe(expected);
+});
 
-    expect(received).toBe(expected);
-})
+test('should show: wounded', () => {
+  const expected = 'wounded';
+  const received = indicator({ name: 'Маг', health: 40 });
 
-test("should show: wounded", () => {
+  expect(received).toBe(expected);
+});
 
-    const expected = 'wounded';
-    const received = indicator({name: 'Маг', health: 40});
+test('should show: critical', () => {
+  const expected = 'critical';
+  const received = indicator({ name: 'Маг', health: 10 });
 
-    expect(received).toBe(expected);
-})
-
-test("should show: critical", () => {
-
-    const expected = 'critical';
-    const received = indicator({name: 'Маг', health: 10});
-
-    expect(received).toBe(expected);
-})
-
-
+  expect(received).toBe(expected);
+});

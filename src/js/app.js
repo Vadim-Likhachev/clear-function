@@ -1,15 +1,12 @@
+export default function indicator(item) {
+  const { health } = item;
 
-export default function indicator (item) {
-   const {health} = item;
+  if (health > 50) {
+    return 'healthy';
+  }
+  if (health < 15) {
+    return 'critical';
+  }
 
-   if (health > 50) {
-       return 'healthy';
-   }
-   else if (health < 15) {
-       return 'critical';
-   }
-   else {
-       return 'wounded';
-   }
+  return 'wounded';
 }
-
